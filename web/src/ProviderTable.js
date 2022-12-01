@@ -211,6 +211,8 @@ class ProviderTable extends React.Component {
               }} >
               <Option key="None" value="None">{i18next.t("application:None")}</Option>
               <Option key="Always" value="Always">{i18next.t("application:Always")}</Option>
+              <Option key="ThreeTimes" value="ThreeTimes">{i18next.t("application:3 Times per Hour")}</Option>
+              <Option key="FiveTimes" value="FiveTimes">{i18next.t("application:5 Times per Hour")}</Option>
             </Select>
           );
         },
