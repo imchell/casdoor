@@ -23,6 +23,16 @@ function flagIcon(country, alt) {
   );
 }
 
+export const countries = [{label: "English", key: "en", country: "US", alt: "English"},
+  {label: "简体中文", key: "zh", country: "CN", alt: "简体中文"},
+  {label: "Español", key: "es", country: "ES", alt: "Español"},
+  {label: "Français", key: "fr", country: "FR", alt: "Français"},
+  {label: "Deutsch", key: "de", country: "DE", alt: "Deutsch"},
+  {label: "日本語", key: "ja", country: "JP", alt: "日本語"},
+  {label: "한국어", key: "ko", country: "KR", alt: "한국어"},
+  {label: "Русский", key: "ru", country: "RU", alt: "Русский"},
+];
+
 class SelectLanguageBox extends React.Component {
   constructor(props) {
     super(props);
@@ -32,16 +42,7 @@ class SelectLanguageBox extends React.Component {
     };
   }
 
-  items = [
-    this.getItem("English", "en", flagIcon("US", "English")),
-    this.getItem("简体中文", "zh", flagIcon("CN", "简体中文")),
-    this.getItem("Español", "es", flagIcon("ES", "Español")),
-    this.getItem("Français", "fr", flagIcon("FR", "Français")),
-    this.getItem("Deutsch", "de", flagIcon("DE", "Deutsch")),
-    this.getItem("日本語", "ja", flagIcon("JP", "日本語")),
-    this.getItem("한국어", "ko", flagIcon("KR", "한국어")),
-    this.getItem("Русский", "ru", flagIcon("RU", "Русский")),
-  ];
+  items = countries.map((country) => this.getItem(country.label, country.key, flagIcon(country.country, country.alt)));
 
   getOrganizationLanguages(languages) {
     const select = [];

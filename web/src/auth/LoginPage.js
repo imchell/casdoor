@@ -27,7 +27,7 @@ import SelfLoginButton from "./SelfLoginButton";
 import i18next from "i18next";
 import CustomGithubCorner from "../CustomGithubCorner";
 import {CountDownInput} from "../common/CountDownInput";
-import SelectLanguageBox from "../SelectLanguageBox";
+import SelectLanguageBox, {countries} from "../SelectLanguageBox";
 import {CaptchaModal} from "../common/CaptchaModal";
 
 const {TabPane} = Tabs;
@@ -69,6 +69,12 @@ class LoginPage extends React.Component {
     } else {
       Setting.showMessage("error", `Unknown authentication type: ${this.state.type}`);
     }
+  }
+
+  componentDidMount() {
+    countries.forEach((country) => {
+      new Image().src = `${Setting.StaticBaseUrl}/flag-icons/${country}.svg`;
+    });
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
