@@ -73,7 +73,7 @@ class LoginPage extends React.Component {
 
   componentDidMount() {
     countries.forEach((country) => {
-      new Image().src = `${Setting.StaticBaseUrl}/flag-icons/${country}.svg`;
+      new Image().src = `${Setting.StaticBaseUrl}/flag-icons/${country.country}.svg`;
     });
   }
 
